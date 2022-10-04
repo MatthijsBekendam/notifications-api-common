@@ -43,6 +43,8 @@ class NotificationsConfig(SingletonModel):
         Construct a client, prepared with the required auth.
         """
         config = cls.get_solo()
+
+        print("testing:", config)
         if config.notifications_api_service:
             return config.notifications_api_service.build_client()
         return None
