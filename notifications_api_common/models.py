@@ -21,7 +21,7 @@ class NotificationsConfig(SingletonModel):
         blank=True,
         null=True,
     )
-
+    print("notification sser",notifications_api_service)
     objects = NotificationsConfigManager()
 
     class Meta:
@@ -44,7 +44,7 @@ class NotificationsConfig(SingletonModel):
         """
         config = cls.get_solo()
 
-        print("testing:", config)
+        print("testing:", config.notifications_api_service)
         if config.notifications_api_service:
             return config.notifications_api_service.build_client()
         return None
