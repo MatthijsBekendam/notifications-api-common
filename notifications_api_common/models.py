@@ -21,8 +21,6 @@ class NotificationsConfig(SingletonModel):
         blank=True,
         null=True,
     )
-    print(notifications_api_service.api_root)
-
 
     objects = NotificationsConfigManager()
 
@@ -46,7 +44,6 @@ class NotificationsConfig(SingletonModel):
         """
         config = cls.get_solo()
 
-        print("testing:", config.__dict__)
         if config.notifications_api_service:
             return config.notifications_api_service.build_client()
         return None
