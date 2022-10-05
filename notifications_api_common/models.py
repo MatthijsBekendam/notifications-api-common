@@ -21,6 +21,10 @@ class NotificationsConfig(SingletonModel):
         blank=True,
         null=True,
     )
+    print(notifications_api_service)
+    print(notifications_api_service.Service)
+    print(notifications_api_service.limit_choices_to)
+
 
     objects = NotificationsConfigManager()
 
